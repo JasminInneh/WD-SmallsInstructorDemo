@@ -175,20 +175,4 @@ p {
   }
 }
  /* MOBILE MEDIA QUERY */
- @media (max-width: 480px) {
-  h1 {
-    font-size: 2rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-  .description {
-    padding: 1rem;
-  }
-  
-  #gallery .col-6 {
-    width: 100%;
-    max-width: 100%;
-    flex: 0 0 100%;
-  }
-}
+ /* WRITE YOUR CODE BELOW THIS LINE */
