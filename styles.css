@@ -156,33 +156,262 @@ p {
 }
 
 /* MEDIA QUERIES START HERE */
- /* TABLET MEDIA QUERY */
-/* These will apply on top of bootstrap */
-@media (max-width: 768px) {
-  .feature-col {
-    padding: 1.5rem;
+/* ================================
+   TABLET MEDIA QUERY
+   768px – 1024px
+   Goal: Optimize layout & UX for
+   touch-first, mid-size screens
+================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* --- Hero --- */
+  .hero-image {
+    height: 75vh;
+    background-position: center top;
   }
 
-  .description {
-    padding: 1.5rem;
-  }
-}
-
- /* MOBILE MEDIA QUERY */
- @media (max-width: 480px) {
+  /* --- Heading --- */
   h1 {
-    font-size: 2rem;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
-  p {
-    font-size: 1rem;
+
+  /* --- Section padding --- */
+  #main {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
-  .description {
-    padding: 1rem;
+
+  /* --- Feature cards: stack image on top, text below --- */
+  #Why-Smalls .row,
+  #How_it_works .row,
+  #say_hello .row {
+    flex-direction: column;
   }
-  
-  #gallery .col-6 {
+
+  /* Ensure reversed grid (#How_it_works) also stacks image on top */
+  #How_it_works .row {
+    flex-direction: column-reverse;
+  }
+
+  #Why-Smalls .col-md-6,
+  #How_it_works .col-md-6,
+  #say_hello .col-md-6 {
     width: 100%;
     max-width: 100%;
     flex: 0 0 100%;
+  }
+
+  #Why-Smalls img,
+  #How_it_works img,
+  #say_hello img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* --- Description block: comfortable tablet reading --- */
+  .description {
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .description h3 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .description p,
+  .description ul {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .description .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* --- Gallery: 3-col grid on tablet (intentional, not default) --- */
+  #gallery .col-6 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+
+  #gallery figure {
+    height: 260px;
+  }
+
+  .benefits {
+    min-height: 170px;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  /* --- Feature col spacing --- */
+  .feature-col {
+    padding: 1.5rem 1rem;
+  }
+
+  /* --- Card rounding & spacing --- */
+  #Why-Smalls,
+  #How_it_works,
+  #say_hello {
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* --- Footer: 2-column layout on tablet --- */
+  footer .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  footer .col-md-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+/* ================================
+   MOBILE MEDIA QUERY
+   Below 768px
+   Goal: Prioritize readability,
+   touch usability, single-column flow
+================================ */
+@media (max-width: 767px) {
+
+  /* --- Hero --- */
+  .hero-image {
+    height: 50vh;
+    background-position: center top;
+  }
+
+  /* --- Heading --- */
+  h1 {
+    font-size: clamp(1.75rem, 8vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  /* --- Section padding --- */
+  #main {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  /* --- Testimonial image --- */
+  #main .container img {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  /* --- Feature cards: full single-column stack --- */
+  #Why-Smalls .row,
+  #How_it_works .row,
+  #say_hello .row {
+    flex-direction: column;
+  }
+
+  #How_it_works .row {
+    flex-direction: column-reverse;
+  }
+
+  #Why-Smalls .col-md-6,
+  #How_it_works .col-md-6,
+  #say_hello .col-md-6 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  #Why-Smalls img,
+  #How_it_works img,
+  #say_hello img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* --- Card spacing --- */
+  #Why-Smalls,
+  #How_it_works,
+  #say_hello {
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* --- Description: tighter, centered --- */
+  .description {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .description h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .description p,
+  .description ul {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  /* --- Buttons: full-width for easy tapping --- */
+  .description .btn,
+  #gallery .btn {
+    width: 100%;
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  /* --- Gallery: 2 columns on mobile --- */
+  #gallery .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  #gallery figure {
+    height: 180px;
+  }
+
+  .benefits {
+    min-height: auto;
+    padding: 0.875rem;
+    font-size: 0.875rem;
+  }
+
+  .benefits h4 {
+    font-size: 0.9rem;
+  }
+
+  /* --- Feature col --- */
+  .feature-col {
+    padding: 0.75rem;
+  }
+
+  /* --- Footer: fully stacked --- */
+  footer .col-lg-6,
+  footer .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  /* --- Navbar brand size --- */
+  .navbar-brand {
+    font-size: 1.1rem;
   }
 }
