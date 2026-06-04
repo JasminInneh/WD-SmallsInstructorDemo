@@ -155,7 +155,7 @@ p {
   padding-left: 0;
 }
 
-//* ================================
+/* ================================
    TABLET MEDIA QUERY
    768px – 1024px
    Goal: Optimize layout & UX for
@@ -261,6 +261,7 @@ p {
     max-width: 33.333%;
   }
 }
+ 
  
 /* ================================
    MOBILE MEDIA QUERY
