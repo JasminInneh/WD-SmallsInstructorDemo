@@ -155,46 +155,33 @@ p {
   padding-left: 0;
 }
 
-/* MEDIA QUERIES START HERE */
-/* ================================
+//* ================================
    TABLET MEDIA QUERY
    768px – 1024px
    Goal: Optimize layout & UX for
    touch-first, mid-size screens
 ================================ */
 @media (min-width: 768px) and (max-width: 1024px) {
-
+ 
   /* --- Hero --- */
   .hero-image {
     height: 75vh;
     background-position: center top;
   }
-
+ 
   /* --- Heading --- */
   h1 {
     font-size: clamp(3rem, 6vw, 4.5rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
-
+ 
   /* --- Section padding --- */
   #main {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-
-  /* --- Feature cards: stack image on top, text below --- */
-  #Why-Smalls .row,
-  #How_it_works .row,
-  #say_hello .row {
-    flex-direction: column;
-  }
-
-  /* Ensure reversed grid (#How_it_works) also stacks image on top */
-  #How_it_works .row {
-    flex-direction: column-reverse;
-  }
-
+ 
   #Why-Smalls .col-md-6,
   #How_it_works .col-md-6,
   #say_hello .col-md-6 {
@@ -202,7 +189,12 @@ p {
     max-width: 100%;
     flex: 0 0 100%;
   }
-
+ 
+  /* Reverse stacking order for How It Works so image stays on top */
+  #How_it_works .row {
+    flex-direction: column-reverse;
+  }
+ 
   #Why-Smalls img,
   #How_it_works img,
   #say_hello img {
@@ -211,18 +203,18 @@ p {
     object-fit: cover;
     border-radius: 12px;
   }
-
-  /* --- Description block: comfortable tablet reading --- */
+ 
+  /* --- Description block --- */
   .description {
     padding: 2.5rem 2rem;
     text-align: center;
   }
-
+ 
   .description h3 {
     font-size: 2rem;
     margin-bottom: 1.25rem;
   }
-
+ 
   .description p,
   .description ul {
     font-size: 1.1rem;
@@ -232,33 +224,22 @@ p {
     margin-left: auto;
     margin-right: auto;
   }
-
+ 
   .description .btn {
     padding: 0.75rem 2rem;
     font-size: 1rem;
   }
 
-  /* --- Gallery: 3-col grid on tablet (intentional, not default) --- */
-  #gallery .col-6 {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-  }
-
   #gallery figure {
     height: 260px;
   }
-
+ 
   .benefits {
     min-height: 170px;
     padding: 1.25rem;
     font-size: 0.95rem;
   }
-
-  /* --- Feature col spacing --- */
-  .feature-col {
-    padding: 1.5rem 1rem;
-  }
-
+ 
   /* --- Card rounding & spacing --- */
   #Why-Smalls,
   #How_it_works,
@@ -267,19 +248,20 @@ p {
     padding: 2rem;
     margin-bottom: 2rem;
   }
-
+ 
   /* --- Footer: 2-column layout on tablet --- */
   footer .col-lg-6 {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 1.5rem;
   }
-
+ 
   footer .col-md-4 {
     flex: 0 0 33.333%;
     max-width: 33.333%;
   }
 }
+ 
 /* ================================
    MOBILE MEDIA QUERY
    Below 768px
